@@ -63,6 +63,18 @@ main section.categories-show {
         font-size: 1.0em;
       }
 
+      aside.few-left {
+        position: absolute;
+        color: whitesmoke;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        background-color: #DB6335;
+        border-top-left-radius: 4px;
+        border-bottom-right-radius: 20px;
+        font-size: 1.0em;
+      }
+
       &:hover {
 
         border-color: #999;

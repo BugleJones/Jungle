@@ -21,6 +21,10 @@
     <aside class="sold-out">
     SOLD OUT!
     </aside>
+  <% elsif product.quantity.between?(1, 5) %>
+    <aside class="few-left">
+      Only <%= product.quantity %> left!
+    </aside>
   <% end %>
 
   <aside class="price">

@@ -22,6 +22,10 @@ class OrdersController < ApplicationController
 
   private
 
+  def run
+    UserMailer.order_email(order).deliver_now
+  end
+
   def empty_cart!
     # empty hash means no products in cart :)
     update_cart({})
@@ -54,6 +58,7 @@ class OrdersController < ApplicationController
       end
     end
     order.save!
+    run
     order
   end
 

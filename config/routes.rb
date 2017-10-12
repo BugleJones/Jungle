@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
 
-  resources :users
+  # resources :users
+
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+  
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
+
   root to: 'products#index'
 
   resources :products, only: [:index, :show]

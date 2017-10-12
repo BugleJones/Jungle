@@ -12,7 +12,7 @@
       <%= order_item.quantity %>
     </td>
     <td>
-      <%= humanized_money_with_symbol order_item.total_price_cents / 100 %>
+      <%= humanized_money_with_symbol order_item.quantity * order_item.product.price %>
     </td>
   </tr>
   <% end %>

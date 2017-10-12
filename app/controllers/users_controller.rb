@@ -12,16 +12,13 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    @user = User.new(user_params)
-
-    respond_to do |format|
-      if @user.save
+    user = User.new(user_params)
+      if user.save
         session[:user_id] = user.id
-        format.html { redirect_to '/', notice: 'User was successfully created.' }
+        redirect_to '/'
       else
-        format.html { render :new }
+        redirect_to '/signup'
       end
-    end
   end
 
   # PATCH/PUT /users/1
@@ -51,6 +48,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password_digest)
+      params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
     end
 end

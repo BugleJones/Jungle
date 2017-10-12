@@ -1,6 +1,16 @@
-    <h1> Thank you for your Jungle purchase! %></h1>
+    <h1> Thank you for your Jungle purchase, <%= @email %>!<br></h1>
     <p>
-      This is a confirmation receipt for your recent purchase on Jungle,
-      your email is: <%= @email %>.<br>
+      This is a confirmation receipt for your recent purchase on Jungle
     </p>
+    <p>
+      Here is your order summary
+    </p>
+      <% @order.line_items.each do |item| %>
+        <p>
+          <%= item.product.name %>
+        </p>
+        <p>
+          <%= item.product.description %>
+        </p>
+      <% end %>
     <p>You the best!</p>

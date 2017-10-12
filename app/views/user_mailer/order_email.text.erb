@@ -2,9 +2,14 @@
 This is a confirmation receipt for your recent purchase on Jungle
 ===============================================
  
-You have successfully signed up to example.com,
-your email is: <%= @email %>.
+
+Here is your order summary
+
+<% @order.line_items.each do |item| %>
+    <%= item.product.name %>
+    <%= item.product.description %>
+<% end %>
  
 Thanks for joining and have a great day!
 
-<h1> You the best! </h1>
+You the best!

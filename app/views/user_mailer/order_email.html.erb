@@ -3,7 +3,7 @@
       This is a confirmation receipt for your recent purchase on Jungle
     </p>
     <p>
-      Here is your order summary
+      Here is your order summary:
     </p>
       <% @order.line_items.each do |item| %>
         <p>
@@ -13,4 +13,8 @@
           <%= item.product.description %>
         </p>
       <% end %>
-    <p>You the best!</p>
+    <p>
+      Your total:
+      <%= @order.total %>
+    </p>
+    <p>Enjoy your purchase and see you again!</p>

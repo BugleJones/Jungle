@@ -1,0 +1,5 @@
+<%= form_for([@product, @review]) do |f| %>
+  Description: <%= f.text_area :description, class: "form-control", placeholder: "How was your experience with #{@product.name}?" %>
+  Rating: <%= f.select(:rating, (1..5)) %>
+<%= f.submit "Submit", class: "btn btn-info" %>
+<% end %>

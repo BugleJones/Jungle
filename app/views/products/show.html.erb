@@ -40,6 +40,9 @@
       <% review.rating.times do |star| %>
         ⭐️
       <% end %>
+      <span class="date-ago">
+      <%= review.created_at.strftime("on %m/%d/%Y") %>
+      </span>
       </h4>
       <p><%= review.description %></p>
     </div>

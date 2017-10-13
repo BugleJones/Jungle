@@ -11,4 +11,15 @@ class Product < ActiveRecord::Base
   validates :quantity, presence: true
   validates :category, presence: true
 
+
+  # Product Status Badges
+  
+  def sold_out?
+    quantity == 0
+  end
+
+  def few_left?
+    quantity.between?(1, 5)
+  end
+
 end

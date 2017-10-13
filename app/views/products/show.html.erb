@@ -21,18 +21,28 @@
           <dt>Quantity</dt>
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
-          <dd><%= @product.price %></dd>
+          <dd><%= humanized_money_with_symbol @product.price %></dd>
         </dl>
       </div>
     </div>
 
   </article>
+  <h2 class="page-header">Write a Review</h2>
+    <div class="well">
+      <div class="form-group">  
+        <%= form_for :review, url: '/products/:product_id/reviews' do |f| %>
+          Description: <%= f.text_area :description, class: "form-control", placeholder: "How was your experience with #{@product.name}?" %>
+      </div>
+          Rating: <%= f.select(:rating, (1..5)) %>
+          <%= f.submit "Submit", class: "btn btn-info" %>
+      <% end %>
+    </div>
   <h2 class="page-header">Reviews</h2>
   <% @product.reviews.each do |review| %>
     <div class="well">
       <h4><%= review.user.first_name %> <%= review.user.last_name %>
       <% review.rating.times do |star| %>
-        🌟
+        ⭐️
       <% end %>
       </h4>
       <p><%= review.description %></p>

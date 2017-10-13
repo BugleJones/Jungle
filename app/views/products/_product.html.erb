@@ -17,11 +17,11 @@
     <% end %>
   </footer>
 
-  <% if product.quantity == 0 %>
+  <% if product.sold_out? %>
     <aside class="sold-out">
-    SOLD OUT!
+      SOLD OUT!
     </aside>
-  <% elsif product.quantity.between?(1, 5) %>
+  <% elsif product.few_left? %>
     <aside class="few-left">
       Only <%= product.quantity %> left!
     </aside>

@@ -1,9 +1,14 @@
 <%= form_for([@product, @review]) do |f| %>
-<div>
-  Description: <%= f.text_area :description, class: "form-control", placeholder: "How was your experience with the #{@product.name}?" %>
+<div class="review-description">
+    Description: <%= f.text_area :description, class: "form-control review-description-field", placeholder: "How was your experience with the #{@product.name}?" %>
 </div>
 <div>
-  Rating: <%= f.select(:rating, (1..5)) %>
-<%= f.submit "Submit", class: "btn btn-info" %>
+    Rating: <%= f.select(:rating, (1..5)) %>
+    <% if current_user %>
+    <%= f.submit "Submit", class: "btn btn-info" %>
+    <% else %>
+    <p class="review-post-denied"> Eager to post a review? You need to be logged in first! <p>
+    <%= link_to 'Login', login_url , class: "btn btn-success" %>
+    <% end %>
 </div>
 <% end %>

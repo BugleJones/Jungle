@@ -27,10 +27,10 @@
         </li>
         <% if current_user %>
           <li><a class="current-user"><%= current_user.email %></a></li>
-          <li class="nav-logout"><%= link_to "Logout", '/logout' %></li>
+          <li class="nav-logout"><%= link_to "Logout", logout_url %></li>
         <% else %>
-          <li class="nav-login"><%= link_to 'Login', '/login' %></li>
-          <li class="nav-signup"><%= link_to 'Signup', '/signup' %></li>
+          <li class="nav-login"><%= link_to 'Login', login_url %></li>
+          <li class="nav-signup"><%= link_to 'Signup', signup_url %></li>
         <% end %>
         </li>
       </ul>

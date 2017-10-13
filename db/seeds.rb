@@ -156,4 +156,35 @@ User.create!([
     password_digest: '$2a$06$ggqNu5fYZLSfPqwQiq9N5.DDKskX4G0UB7tfRtJyRmTjq6/q1anXW', #bones
   }])
 
+## REVIEWS
+
+puts "Re-creating Reviews ..."
+
+Review.create!([
+  {
+    product_id:  4,
+    user_id: 1,
+    description: 'This IS the best purchase I\'ve ever made',
+    rating: 5
+  },
+  {
+    product_id:  4,
+    user_id: 2,
+    description: 'This IS the worst purchase I\'ve ever made',
+    rating: 1
+  },
+  {
+    product_id:  2,
+    user_id: 3,
+    description: 'LAVE LAVE LAVE IT',
+    rating: 4
+  },
+  {
+    product_id:  5,
+    user_id: 3,
+    description: 'Not as described, much smaller than photo leads on.',
+    rating: 1
+  }
+  ])
+
 puts "DONE!"

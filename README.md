@@ -9,10 +9,10 @@ Some special features of Jungle are its rating system, email confirmation capabi
 
 ## Captures
 
-![""]()
-!["Product Catelog Continued: Multiple Badges"]()
-![""]()
-![""]()
+!["Product Catalog: Logged-In User"](https://github.com/BugleJones/jungle-rails/blob/master/app/docs/Product_Catalog.png)
+!["Product Catelog Continued: Multiple Badges"](https://github.com/BugleJones/jungle-rails/blob/master/app/docs/Product_Catalog_Continued.png)
+!["Product Details Page: User Not Logged In"](https://github.com/BugleJones/jungle-rails/blob/master/app/docs/Product_Details_Page.png)
+!["Purchase Window"](https://github.com/BugleJones/jungle-rails/blob/master/app/docs/Purchase_Window.png)
 
 
 ## Setup

@@ -1,9 +1,9 @@
 class User < ActiveRecord::Base
-
+    
     has_secure_password
 
-    def user_logged_in?
-        
-    end
+    validates :email, uniqueness: true
+
+    has_many :reviews
 
 end

@@ -7,10 +7,10 @@
   </header>
   <p class="description">
     <%= product.description %>
-    <p>Average Star Rating:
     <% if product.reviews.average(:rating) == nil%>
-    <p> No ⭐️s found yet </p>
+    <p> </p>
     <% else %>
+    <p>Average Star Rating:
     <% product.reviews.average(:rating).to_i.times do |star| %>
       ⭐️
       <% end %>

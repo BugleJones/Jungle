@@ -138,16 +138,22 @@ puts "Re-creating Users ..."
 
 User.create!([
   {
-  first_name:  'H. F.',
-  last_name: 'Shoes',
-  email: 'shoes@shoes.shoes',
-  password_digest: '$2a$06$MVpLrJ8TdDfcMTilwCUwJeRLHNFsR5h6yrIewoP50bLrI9HzDVL9q', #shoes
+    first_name:  'H. F.',
+    last_name: 'Shoes',
+    email: 'shoes@shoes.shoes',
+    password_digest: '$2a$06$MVpLrJ8TdDfcMTilwCUwJeRLHNFsR5h6yrIewoP50bLrI9HzDVL9q', #shoes
   },
   {
     first_name:  'Banshee',
     last_name: 'Flame',
     email: 'flame@flame.flame',
     password_digest: '$2a$06$tF2i8QfdRiAxNlja387sJO5E3zjay3wjK2aSTiu1.BBIFofbaw3qm', #flame
+  },
+  {
+    first_name:  'Bugle',
+    last_name: 'Jones',
+    email: 'buglejones@email.com',
+    password_digest: '$2a$06$xfMnpC1Dgv45ajgPEmoYye.DVMNiLlCatEF.flkD8o2hwmmw0oj7C', #bugle
   },
   {
     first_name:  'Dumbo',
@@ -168,10 +174,28 @@ Review.create!([
     rating: 5
   },
   {
-    product_id:  4,
+    product_id:  8,
     user_id: 2,
     description: 'This IS the worst purchase I\'ve ever made',
     rating: 1
+  },
+  {
+    product_id:  6,
+    user_id: 3,
+    description: 'They work great and seem to be constructed well. They have held up so far with no signs of coming apart.',
+    rating: 1
+  },
+  {
+    product_id:  2,
+    user_id: 1,
+    description: 'I am happy with my purchase! I am 5\'8, size 8-10, and ordered the large which fit perfect. Those shorter might have to roll the top over so it won\'t drag on the bottom. The fabric is microfleece, which is a softness but it is still light. Living in CA, that works perfect for me! I ordered three and they are consistent. I have washed them several times already with no problems. Highly recommend!',
+    rating: 1
+  },
+  {
+    product_id:  1,
+    user_id: 3,
+    description: 'In before SOLD OUT, so happy with my purchase',
+    rating: 5
   },
   {
     product_id:  2,

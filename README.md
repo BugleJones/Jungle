@@ -2,7 +2,7 @@
 
 Jungle is a mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 Jungle was built with users in mind from the main catalog to each products detail page.
-Some special features of Jungle are its rating system, email confirmation capabilities, and authentication processes:
+Some special features of Jungle is its rating system, email confirmation capabilities, and authentication processes:
   1. The rating system built into Jungle adjusts to changes in ratings in real time and can be viewed on both the catalog page and each product detail page
   2. Jungle is set up with Action Mailer to send out simple email confirmations to users upon purchase
   3. While users do not need to be signed in to view the products catalog and respective detail pages, a user must sign in to submit a review or delete a review and admin users have an extra step of authentication to access the create product and create category pages

@@ -61,5 +61,45 @@ RSpec.describe User, type: :model do
     expect(full_user2).to_not be_valid
     expect(full_user2.errors.messages[:email]).to include('has already been taken')
   end
+
+  context 'on an existing user' do
+    let(:user) do
+      full_user1 = User.new(first_name: 'a', last_name: 'b', email: 'email@email.com', password: 'apples', password_confirmation: 'apples')
+      full_user1.save
+      User.find full_user1.id
+    end
+
+    it "should be valid with no changes" do
+      expect(user).to_not be_valid
+    end
+
+    it "should not be valid with an empty password" do
+      user.password = user.password_confirmation = ""
+      expect(user).to_not be_valid
+    end
+
+    it "should be valid with a new (valid) password" do
+      user.password = user.password_confirmation = "new password"
+      expect(user).to be_valid
+    end
+  end
+
+  describe ".authenticate_with_credentials" do
     
+    it 'should authenticate if password and email are valid' do
+    user = User.new(first_name: 'a', last_name: 'b', email: 'email@email.com', password: 'apples', password_confirmation: 'apples')
+    user.save
+    valid_user = User.authenticate_with_credentials('email@email.com', 'apples')
+
+    expect(valid_user).to eq(user)
+    end
+
+    it 'should not authenticate if password and email are valid' do
+      user = User.new(first_name: 'a', last_name: 'b', email: 'email@email.com', password: 'apples', password_confirmation: 'apples')
+      user.save
+      invalid_user = User.authenticate_with_credentials('notemail@notemail.com', 'apples')
+  
+      expect(invalid_user).to_not eq(user)
+      end
+  end
 end

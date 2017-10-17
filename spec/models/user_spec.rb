@@ -100,6 +100,20 @@ RSpec.describe User, type: :model do
       invalid_user = User.authenticate_with_credentials('notemail@notemail.com', 'apples')
   
       expect(invalid_user).to_not eq(user)
-      end
+    end
+
+    it 'should authenticate if user adds uppercase letters to their email' do
+      user = User.new(first_name: 'a', last_name: 'b', email: 'email@email.com', password: 'apples', password_confirmation: 'apples')
+      user.save
+      valid_user = User.authenticate_with_credentials('EMAIL@email.com', 'apples')
+      expect(valid_user).to eq(user)
+    end
+
+    it 'should authenticate if user adds spaces to beginning or end of email' do
+      user = User.new(first_name: 'a', last_name: 'b', email: 'email@email.com', password: 'apples', password_confirmation: 'apples')
+      user.save
+      valid_user = User.authenticate_with_credentials(' email@email.com ', 'apples')
+      expect(valid_user).to eq(user)
+    end
   end
 end

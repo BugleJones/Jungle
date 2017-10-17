@@ -12,8 +12,6 @@ class User < ActiveRecord::Base
     validates :first_name, presence: true
     validates :last_name, presence: true
 
-    # before_save { self.email = email.downcase }
-
     has_many :reviews
 
     def self.authenticate_with_credentials(email, password)

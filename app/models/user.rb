@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
     has_many :reviews
 
     def self.authenticate_with_credentials(email, password)
-        user = where('LOWER(email) = ?', email.downcase.strip)[0]
+        user = where('LOWER(email) = ?', email.downcase.delete(' '))[0]
         user && user.authenticate(password)
     end
 
